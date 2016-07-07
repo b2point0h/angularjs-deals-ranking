@@ -21,7 +21,7 @@
 				<tr>
 					<td><h3>100</h3></td>
 				</tr>
-				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title']">
+				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title'] | filter:byRange90">
 					<td>{{ games.title }}</td>
 					<td>{{ games.metacriticScore }}</td>
 					<td>{{ games.dealRating }}</td>
@@ -31,7 +31,7 @@
 				<tr>
 					<td><h3>90</h3></td>
 				</tr>
-				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title']">
+				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title'] | filter:byRange80">
 					<td>{{ games.title }}</td>
 					<td>{{ games.metacriticScore }}</td>
 					<td>{{ games.dealRating }}</td>
@@ -41,7 +41,7 @@
 				<tr>
 					<td><h3>80</h3></td>
 				</tr>
-				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title']">
+				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title'] | filter:range(70, 80)">
 					<td>{{ games.title }}</td>
 					<td>{{ games.metacriticScore }}</td>
 					<td>{{ games.dealRating }}</td>
