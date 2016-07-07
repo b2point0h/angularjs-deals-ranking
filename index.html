@@ -41,7 +41,7 @@
 				<tr>
 					<td><h3>80</h3></td>
 				</tr>
-				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title'] | filter:range(70, 80)">
+				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title'] | filter:range">
 					<td>{{ games.title }}</td>
 					<td>{{ games.metacriticScore }}</td>
 					<td>{{ games.dealRating }}</td>

@@ -10,20 +10,15 @@ app.controller('GameController', function($scope, $http) {
         $scope.byRange80 = function(val) {
           return (val.metacriticScore >= 80 && val.metacriticScore <=90)
         }
-        $scope.rangeFilter = function (val, min, max) {
-            return (val.metacriticScore > games.min && val.metacriticScore < games.max);
-        }
-        app.filter('range', function(){
-          return function(val, min, max){
-            var output = [];
-            output = val.metacriticScore >= min && val.metacriticScore <= max;
-            return output;
-          }
-        });
         $scope.range = function (val, min, max) {
           var score = Math.ceil(val.metacriticScore);
-            return (val.metacriticScore > score.min && val.metacriticScore < score.max);
+            return (score > val.min && score < val.max);
         };
-        
+        $scope.minFilter = function (games) {
+          return games.metacriticScore >= $scope.minFilter;
+        };
+        $scope.maxFilter = function (games) {
+          return games.metacriticScore <= $scope.maxFilter;
+        };    
     });
 });
