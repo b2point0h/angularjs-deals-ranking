@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="GameController">
+<head>
+	<title>Deals Ranking</title>
+	<link rel="stylesheet" href="build/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div class="container">
+		<h1>Game Deals</h1>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Game Name</th>
+					<th>Meta Critic Score</th>
+					<th>Deal Rating</th>
+				</tr>	
+			</thead>
+			<tbody>
+				<tr>
+					<td><h3>100</h3></td>
+				</tr>
+				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title']">
+					<td>{{ games.title }}</td>
+					<td>{{ games.metacriticScore }}</td>
+					<td>{{ games.dealRating }}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td><h3>90</h3></td>
+				</tr>
+				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title']">
+					<td>{{ games.title }}</td>
+					<td>{{ games.metacriticScore }}</td>
+					<td>{{ games.dealRating }}</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td><h3>80</h3></td>
+				</tr>
+				<tr data-ng-repeat="games in deals | orderBy:['-metacriticScore', 'title']">
+					<td>{{ games.title }}</td>
+					<td>{{ games.metacriticScore }}</td>
+					<td>{{ games.dealRating }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<script src="assets/js/angular.min.js"></script>
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
